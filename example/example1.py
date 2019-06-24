@@ -6,9 +6,14 @@
 """
 from __future__ import print_function
 
-from pysnow_change_epfl.change_utils import check_sciper, check_pwd, \
-                                            get_changelog_info, \
-                                            create_change
+from pysnow_change_epfl.change_utils import (check_sciper, check_pwd,
+                                             get_changelog_info,
+                                             create_change)
+
+try:
+    raw_input
+except NameError:  # raw_input() was removed in Python 3
+    raw_input = input
 
 # Verification before create change
 try:
